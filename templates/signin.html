@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{%block title%} SignUp {%endblock%}
+{%load static%}
+{%block body%}
+        <div class="auth-inner-content">
+            <!-- <img src="../images/bg_image.png" class="background-image" alt=""> -->
+            <div class="auth-left-image">
+                 <img src="../images/auth_logo.png" class="foreground-image" alt="">
+                 <div class="social-container">
+                     <a href="#">
+                         <img src="../images/social/fb.svg" alt="">
+                     </a>
+                     <a href="#">
+                        <img src="../images/social/mail.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="../images/social/insta.svg" alt="">
+                    </a>
+                 </div>
+            </div>
+            <div class="auth-right-form">
+                <div class="auth-form-content">
+                    <div class="form-title">
+                        <h1>Sign Up</h1>
+                    </div>
+                    <form method="post" action="/signup/">
+                      {% csrf_token %}
+                        <div class="-input-feild-box">
+                           <input type="text" placeholder="Username" name="name" id="name">
+                        </div>
+                        <div class="-input-feild-box">
+                            <input type="email" placeholder="Email" name="email" id="email" title="Email in not valid" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" >
+                         </div>
+                         <div class="-input-feild-box">
+                            <input type="password" placeholder="Password" name="pswd1" id="pswd1">
+                         </div>
+                         <div class="-input-feild-box">
+                            <input type="password" placeholder="Retype Password" name="pswd2" id="pswd2">
+                         </div>
+                         <div class="-form-button">
+                             <button>Sign Up</button>
+                             <span>
+                                 <a href="/login/">Already Have an Account?</a>
+                             </span>
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{%endblock%}

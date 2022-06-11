@@ -1,0 +1,201 @@
+{%extends 'base.html'%}
+{%block title%} Comingsoon {%endblock%}
+{%load static%}
+{%block body%} 
+
+</section>
+<section class="build-app-banner-section">
+  <div class="build-banner1-heading">
+    <p> House Plans</p>
+  </div>
+
+</section>
+<section>
+
+
+  <div class="builder-carousle-uper-ingo">
+    <div class="builder-carou-head">
+      <p>HIGHLY-RATED PROFESSIONAL BUILDERS</p>
+    </div>
+    <div class="builder-carou-info">
+      <p>We are not only part of Yelp, Google Business, Houzz, we are also registered with the Better Business Bureau
+        (BBB). It is very important to OCA Builders to keep an amazing 5 star Rating, we always go the extra mile to
+        keep our reputation. We are the local builders and remodeling experts that you have been looking for.</p>
+    </div>
+
+
+
+  </div>
+  <div class="builder-home-carousel-section">
+
+
+    <div class="fade">
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+      <div>
+        <div class="builder-slider-item"><img src="../images/builder-carsousel.svg" alt=""></div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+</section>
+<section class="builder-app-link-section">
+  <div class="builder-app-link-inner">
+
+    <div class="img-section">
+      <img src="../images/builder-arch.svg" alt="">
+    </div>
+    <div class="buttons-section">
+      <div class="text-div">
+
+        <p>100% <br>SATISFACTION <br>GURANTEED</p>
+
+
+      </div>
+      <div class="button-div">
+
+        <button class="mm-trigger">Book The Order</button>
+      </div>
+      <div class="mm-modal">
+        <div class="mm-modal-content">
+          <div class="mm-modal-header">
+
+            <p>Appointment</p>
+            <span class="mm-builder-close-button">&times;</span>
+          </div>
+          <form action="" class="modal-form">
+            <div class="modal-form-inner">
+              <div class="modal-input-div">
+                <input type="text" placeholder="Enter Name" name="name">
+
+              </div>
+              <div class="modal-input-div">
+                <input type="text" placeholder="Enter Phone Numer" name="number">
+              </div>
+
+              <div class="modal-input-div">
+                <select name="province" id="">
+                  {% for province in province %}
+                     <option value="{{ province.province }}">{{ province.province }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="modal-input-div">
+                <select name="city" id="">
+                  {% for city in city %}
+                     <option value="{{ city.city }}" >{{ city.city }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              
+              <div class="modal-input-div">
+                <select name="structure" id="">
+                  <option value="Grey Structure Only">Grey Structure Only</option>
+                  <option value="Complete House">Complete House</option>
+                  <option value="Complete With Interior">Complete With Interior</option>
+                </select>
+
+              </div>
+
+            
+              <div class="modal-input-div">
+                <select name="size" id="">
+                  <option value="">5 Marla</option>
+                  <option value="">10 Marla</option>
+                  <option value="">15 Marla</option>
+                  <option value="">1 Kanal</option>
+                  <option value="">2 Kanal</option>
+                  <option value="">Others</option>
+                </select>
+
+              </div>
+              <!-- <div class="modal-input-div">
+                <select name="" id="">
+                  <option value="">Volvo</option>
+                  <option value="">Saab</option>
+                  <option value="">Mercedes</option>
+                  <option value="">Audi</option>
+                </select>
+
+              </div> -->
+              <div class=" checkbox-input-div">
+                <p>Land</p>
+                <div class="checkbox-container1">
+                  <div class="checkbox-container">
+                    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                    <label for="styled-checkbox-1">Yours ?</label>
+                  </div>
+                  <div class="checkbox-container">
+                    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value1">
+                    <label for="styled-checkbox-2">Required</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="modal-input-div">
+                <textarea name="" id="" cols="30" placeholder="Describe yourself here..."></textarea>
+
+
+              </div>
+              <div class="modal-input-div">
+                <button>Submit</button>
+
+
+              </div>
+            </div>
+            <div class="terms-div">
+              <div class="checkbox-container">
+                <input class="styled-checkbox" id="agree" type="checkbox" value="value1">
+                <label for="agree">I had read all the agrement, licence, terms and conditions</label>
+              </div>
+            </div>
+
+
+          </form>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</section>
+<section class="build-app-banner2-section">
+  <div class="build-banner2-heading">
+    <p> We Build Your Dream House</p>
+  </div>
+
+</section>
+
+{%endblock%}

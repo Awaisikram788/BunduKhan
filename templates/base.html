@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    
+</head>
+<body>
+{% block homenav %}{% endblock %}
+<!-- <section class="sticky">
+    <div class="main-navbar-outer">
+      <div class="navbar-logo">
+        <img src="../images/auth_logo.png" alt="">
+      </div>
+      <button class="toggle-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="main-navbar ">
+        <ul>
+          <li class="drop-link">
+            <a href="">Home</a>
+            <i class="mm-arrow down"></i>
+
+
+              <div class="drop-menu">
+                <ul>
+                  <li><a href="aboutus/">About us</a></li>
+                  <li><a href="aboutus/">Services</a></li>
+                </ul>
+
+
+
+              </div>
+          </li>
+          <li>
+            <a href="comingsoon/">My Property</a>
+          </li>
+          <li>
+            <a href="builderhome/">Real Estate</a>
+          </li>
+          <li>
+            <a href="contact/">Contact Us</a>
+          </li>
+          <li>
+            <a href="login/">Login/Signup</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-social-icons">
+        <div class="main-social-container">
+          <a href="#">
+            <img src="{%static 'images/social/fb.svg'%}"  alt="">
+          </a>
+          <a href="#">
+            <img src="{%static 'images/social/mail.svg'%}" alt="">
+          </a>
+          <a href="#">
+            <img src="{%static 'images/social/insta.svg'%}" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<!-- <div id="preloder">
+  <div class="loader"></div>
+</div> -->
+
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <span class="icon_close"></span>
+    </div>
+    <div class="logo">
+        <a href="/">
+            <img src="{% static 'img/logo.png' %}" alt="">
+        </a>
+    </div>
+    <div id="mobile-menu-wrap"></div>
+    <div class="om-widget mm-ht-widget">
+        <ul>
+            <li><i class="icon_mail_alt"></i> <a href="mailto:info@bundukhanbuilders.com" class="mm-mail">info@bundukhanbuilders.com</a>
+            </li>
+            <li><i class="fa fa-mobile-phone"></i>+92-326-6555593</li>
+        </ul>
+       <a href="/property_submit/" class="hw-btn">Build Your House</a>
+    </div>
+    <div class="om-social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-youtube-play"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    </div>
+</div>
+
+
+<header class="header-section">
+    <div class="hs-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo">
+                        <a href="/"><img src="{%static 'img/logo.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="ht-widget mm-ht-widget">
+                        <ul>
+                            <li><i class="icon_mail_alt"></i> <a href="mailto:info@bundukhanbuilders.com" class="mm-mail">info@bundukhanbuilders.com</a>
+                            </li>
+                            <li><i class="fa fa-mobile-phone"></i>+92-326-6555593</li>
+                        </ul>
+                       <a href="/property_submit/" class="hw-btn">Build Your House</a>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas-open">
+                <span class="icon_menu"></span>
+            </div>
+        </div>
+    </div>
+    <div class="hs-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="#">Properties</a>
+                                <ul class="dropdown">
+                                    <li><a href="/property_grid/">Property Grid</a></li>
+                                    <li><a href="/property_list/">Property List</a></li>
+                                    <li><a href="/property_detail/">Property Detail</a></li>
+                                    <li><a href="/property_submit/">Property Submit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/agents/">Agents</a></li>
+                            <li><a href="/about/">About</a></li>
+{#                            <li><a href="blog.html">Blog</a></li>#}
+                            <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="hn-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block body %}{% endblock %}
+
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="fs-about">
+                    <div class="fs-logo">
+                        <a href="#">
+                            <img src="img/xf-logo.png.pagespeed.ic.ZaxgeU4k9R.png" alt="">
+                        </a>
+                    </div>
+                    <p>Bundu Khan Builders is Pakistan's First Online Website That Gather Complete house building includling interior
+                    and exterior under one roof</p>
+                    <div class="fs-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="fs-widget">
+                    <h5>Help</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Knowledgebase</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="fs-widget">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Create Property</a></li>
+                        <li><a href="#">My Properties</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fs-widget">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe Us for latest news and development.</p>
+                    <form action="#" class="subscribe-form">
+                        <input type="text" placeholder="Email">
+                        <button type="submit" class="site-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-text">
+            <p>
+                Copyright @ 2022
+                All rights reserved | This Website is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                    href="https://codezbit.com/" target="_blank">Codezbit</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js%2bjquery.magnific-popup.min.js.pagespeed.jc.Tf__0MlZgP.js' %}"></script>
+<script>
+    eval(mod_pagespeed_kwIYonKFPX);
+</script>
+<script>
+    eval(mod_pagespeed_Ne_qpHHmaB);
+</script>
+<script src="{% static 'js/mixitup.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js%2bjquery.slicknav.js%2bowl.carousel.min.js.pagespeed.jc.2duhQeyx6P.js' %}"></script>
+<script>
+    eval(mod_pagespeed_MV7Amt5y6D);
+</script>
+<script>eval(mod_pagespeed_jBenzlk$2n);</script>
+<script>eval(mod_pagespeed_huC5GvlTZp);</script>
+
+<script src="{% static 'js/jquery.richtext.min.js%2bimage-uploader.min.js.pagespeed.jc.9vs5hxz9iy.js' %}"></script>
+
+<script>
+    eval(mod_pagespeed_8m01CCMgpp);
+</script>
+<script>eval(mod_pagespeed_D7pHsKdPHY);</script>
+<script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>

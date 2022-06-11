@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block title%} Comingsoon {%endblock%}
+{%load static%}
+{%block body%} 
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<section class="coming-soon-section">
+
+    <div class="overlay-coming">
+        <div class="soon-inner-div">
+            <div class="coming-heading-div">
+                <p>WE’RE COMING SOON :)</p>
+            </div>
+            <div class="coming-p-div">
+                <p>Get In Touch With Us</p>
+            </div>
+            <form action="" method="post" class="coming-form" role="form">
+                {% csrf_token %}
+                <div class="coming-email-input">
+                    <input type="email" placeholder="Your Email" id="email" name="email" required>
+                </div>
+                <button class="ht-btn ht-btn-md" type="submit" title="Send Message">Subscribe</button>
+            </form>
+
+<div class="coming-social-icons-div">
+<a href=""> <i class="fa fa-facebook"></i></a>
+
+<a href=""> <i class="fa fa-instagram"></i></a>
+
+<a href=""> <i class="fa fa-envelope"></i></a>
+</div>
+
+        </div>
+    </div>
+
+
+</section>
+
+{%endblock%}

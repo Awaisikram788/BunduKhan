@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block title%} Login {%endblock%}
+{%load static%}
+{%block body%}
+        <div class="auth-inner-content">
+            <img src="../images/bg_image.png" class="background-image" alt="">
+            <div class="auth-left-image">
+                 <img src="../images/auth_logo.png" class="foreground-image" alt="">
+                 <div class="social-container">
+                     <a href="#">
+                         <img src="../images/social/fb.svg" alt="">
+                     </a>
+                     <a href="#">
+                        <img src="../images/social/mail.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="../images/social/insta.svg" alt="">
+                    </a>
+                 </div>
+            </div>
+            <div class="auth-right-form">
+                <div class="auth-form-content">
+                    <div class="form-title">
+                        <h1>Log In</h1>
+                    </div>
+                    <form method="post" action="/login/" autocomplete="off">
+                      {% csrf_token %}
+                        <div class="-input-feild-box">
+                           <input type="text" placeholder="Username" name="username" id="username">
+                        </div>
+                        <div class="-input-feild-box">
+                            <input type="email" placeholder="Email" id="email" name="email">
+                         </div>
+                         <div class="-input-feild-box">
+                            <input type="password" placeholder="Password" name="password" id="password">
+                         </div>
+                         <div class="forgot-password">
+                            <span>
+                                <a href="/reset/">Forgot Password?</a>
+                            </span>
+                         </div>
+                         <div class="-form-button">
+                             <button>Login In</button>
+                             <span>
+                                 <a href="/signup/">Or create an account</a>
+                             </span>
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{%endblock%}

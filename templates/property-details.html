@@ -1,0 +1,438 @@
+{% extends 'base.html' %}
+{% block title %} Detail {% endblock %}
+{% load static %}
+{% block body %}
+{% load social_share %}
+<section class="property-details-section">
+    {%for i in details%}
+    <div class="property-pic-slider owl-carousel">
+        <div class="ps-item">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12 p-0">
+                                <div class="ps-item-inner large-item set-bg"
+                                     data-setbg="/media/{{i.image1}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image2}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image3}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image4}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image5}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="ps-item">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12 p-0">
+                                <div class="ps-item-inner large-item set-bg"
+                                     data-setbg="/media/{{i.image1}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image2}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image3}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image4}}"></div>
+                            </div>
+                            <div class="col-sm-6 p-0">
+                                <div class="ps-item-inner set-bg" data-setbg="/media/{{i.image5}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="pd-text">
+                    <div class="row">
+                        {%for i in details%}
+                        <div class="col-lg-6">
+                            <div class="pd-title">
+                                <div class="label">{{i.status}}</div>
+                                <div class="pt-price">$ {{i.price}}<span>/month</span></div>
+                                <h3>{{i.name}}</h3>
+                                <p><span class="icon_pin_alt"></span> {{i.area}}</p>
+                            </div>
+                        </div>
+                        {%endfor%}
+                        <div class="col-lg-6">
+                            <div class="pd-social">
+                                 <a href="#"><i class="fa fa-twitter"></i></a>
+                                 <a href="#"><i class="fa fa-facebook"></i></a>
+                                 <a href="#"><i class="fa fa-instagram"></i></a>
+                                 <a href="{{post_to_whatsapp_url }}" class="{{ link_class }}"><i class="fa fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {%for i in details%}
+                    <div class="pd-board">
+                        <div class="tab-board">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Description</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Amenities</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                    <div class="tab-details">
+                                        <ul class="left-table">
+                                            <li>
+                                                <span class="type-name">Property Type</span>
+                                                <span class="type-value">{{i.Property_Type}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Property ID</span>
+                                                <span class="type-value">#{{i.id}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Price</span>
+                                                <span class="type-value">$ {{i.price}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Year Built</span>
+                                                <span class="type-value">{{i.Year_Build}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Contract type</span>
+                                                <span class="type-value">{{i.status}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Agent</span>
+                                                <span class="type-value">{{i.creator}}</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="right-table">
+                                            <li>
+                                                <span class="type-name">Home Area</span>
+                                                <span class="type-value">{{i.propertyarea}} sqft</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Living Rooms</span>
+                                                <span class="type-value">{{i.livingrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Bedrooms</span>
+                                                <span class="type-value">{{i.bedrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Bathrooms</span>
+                                                <span class="type-value">{{i.washrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Garages</span>
+                                                <span class="type-value">{{i.garage}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Basement</span>
+                                                <span class="type-value">{{i.basement}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                    <div class="tab-desc">
+                                       {{i.property_details}}
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                    <div class="tab-details">
+                                        <ul class="left-table">
+                                            <li>
+                                                <span class="type-name">Property Type</span>
+                                                <span class="type-value">{{i.Property_Type}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Property ID</span>
+                                                <span class="type-value">#{{i.id}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Price</span>
+                                                <span class="type-value">$ {{i.price}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Year Built</span>
+                                                <span class="type-value">{{i.Year_Build}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Contract type</span>
+                                                <span class="type-value">{{i.status}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Agent</span>
+                                                <span class="type-value">{{i.creator}}</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="right-table">
+                                            <li>
+                                                <span class="type-name">Home Area</span>
+                                                <span class="type-value">{{i.propertyarea}} sqft</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Living Rooms</span>
+                                                <span class="type-value">{{i.livingrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Bedrooms</span>
+                                                <span class="type-value">{{i.bedrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Bathrooms</span>
+                                                <span class="type-value">{{i.washrooms}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Garages</span>
+                                                <span class="type-value">{{i.garage}}</span>
+                                            </li>
+                                            <li>
+                                                <span class="type-name">Basement</span>
+                                                <span class="type-value">{{i.basement}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    {%for floor_plan in details%}
+                    <div class="pd-widget">
+                        <h4>Floor plans</h4>
+                        <img src="/media/{{floor_plan.floor_plan}}" alt="">
+                    </div>
+                    {%endfor%}
+                    <div class="pd-widget">
+                        <h4>Property Location</h4>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d735515.5813275519!2d-80.41163541934742!3d43.93644386501528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a55bbf3de23d7%3A0x3ada5af229b47375!2sMono%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sbd!4v1583262687289!5m2!1sen!2sbd"
+                                    height="350" style="border:0;" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="map-location">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="ml-item">
+                                        <div class="ml-single-item">
+                                            <h6>Hospital <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                                            <p>Portland Ave Rochester, NY 14621</p>
+                                        </div>
+                                        <div class="ml-single-item">
+                                            <h6>Schools <span>( <i class="fa fa-location-arrow"></i> 8 km )</span></h6>
+                                            <p>Cragin Elementary School</p>
+                                        </div>
+                                        <div class="ml-single-item">
+                                            <h6>Store <span>( <i class="fa fa-location-arrow"></i> 2 km )</span></h6>
+                                            <p>Exceptional Shoes & Clothing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="ml-item">
+                                        <div class="ml-single-item">
+                                            <h6>Laundry <span>( <i class="fa fa-location-arrow"></i> 3 km )</span></h6>
+                                            <p>Besst at laundry</p>
+                                        </div>
+                                        <div class="ml-single-item">
+                                            <h6>Health <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                                            <p>Boomerang Barber & Beauty</p>
+                                        </div>
+                                        <div class="ml-single-item">
+                                            <h6>Health <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                                            <p>Boomerang Barber & Beauty</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-widget">
+                        <h4>Dealer</h4>
+                        <div class="pd-agent">
+                            <div class="agent-pic">
+                                <img src="{%static 'img/CEO.jpeg'%}" alt="">
+                            </div>
+                            <div class="agent-text">
+                                <div class="at-title">
+                                    <h6>Qaiser Khan</h6>
+                                    <span>Founder & CEO</span>
+                                    <a href="#" class="primary-btn">VIew profile</a>
+                                </div>
+                                <p>This is Our CEO Qaiser Khan. Who have 10 Year's of experience in Real Estate and building
+                                    the dreams.</p>
+                                <div class="at-option">
+                                    <div class="at-number">+92-326-6555593</div>
+                                    <div class="at-social">
+                                        <a href="https://web.facebook.com/qaiserkhan.khan.94"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+                                        <a href="mailto:QaiserKhan@bundukhanbuilders.com"><i class="fa fa-envelope-o"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-widget">
+                        {%for count in count%}
+                        <h4>{{count}} reviews</h4>
+                        {%endfor%}
+                        <div class="pd-review">
+                            {%for comment in comments%}
+                            <div class="pr-item">
+                                <div class="pr-avatar">
+                                    <div class="pr-pic">
+                                        <img src="{%static 'img/comment.png'%}" alt="">
+                                    </div>
+                                    <div class="pr-text">
+                                        <h6>{{comment.name}}</h6>
+                                        <span>{{comment.created}}</span>
+                                    </div>
+                                </div>
+                                <p>{{comment.body}}</p>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                    <div class="pd-widget">
+                        <h4>YOur Rating</h4>
+                         {%for i in details%}
+                        <form action=" " method="POST" class="review-form">
+                            {% csrf_token %}
+                            <div class="group-input">
+                                <input type="text" placeholder="Name", name="name", id="name">
+                                <input type="text" placeholder="Email" name="email", id="email">
+                                <input type="text" placeholder="Website", name="website",id="website">
+                                <input type="hidden" placeholder="Website", name="property_id",id="property_id" value="{{i.id}}">
+                            </div>
+                            <textarea placeholder="Messages" name="message", id="message"></textarea>
+                            <button type="Submit" class="site-btn">send messages</button>
+                        </form>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="property-sidebar">
+<!--                    <div class="single-sidebar">-->
+<!--                        <div class="section-title sidebar-title">-->
+<!--                            <h5>Top agent</h5>-->
+<!--                        </div>-->
+<!--                        <div class="top-agent">-->
+<!--                            <div class="ta-item">-->
+<!--                                <div class="ta-pic set-bg" data-setbg="img/property/details/sidebar/ta-1.jpg"></div>-->
+<!--                                <div class="ta-text">-->
+<!--                                    <h6><a href="#">Ashton Kutcher</a></h6>-->
+<!--                                    <span>Team Leader</span>-->
+<!--                                    <div class="ta-num">123-455-688</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="ta-item">-->
+<!--                                <div class="ta-pic set-bg" data-setbg="img/property/details/sidebar/ta-2.jpg"></div>-->
+<!--                                <div class="ta-text">-->
+<!--                                    <h6><a href="#">Ashton Kutcher</a></h6>-->
+<!--                                    <span>Team Leader</span>-->
+<!--                                    <div class="ta-num">123-455-688</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="ta-item">-->
+<!--                                <div class="ta-pic set-bg" data-setbg="img/property/details/sidebar/ta-3.jpg"></div>-->
+<!--                                <div class="ta-text">-->
+<!--                                    <h6><a href="#">Ashton Kutcher</a></h6>-->
+<!--                                    <span>Team Leader</span>-->
+<!--                                    <div class="ta-num">123-455-688</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="single-sidebar slider-op">
+                        <div class="section-title sidebar-title">
+                            <h5>Featural categories</h5>
+                        </div>
+                        <div class="sf-slider owl-carousel">
+                            <div class="sf-item set-bg" data-setbg="img/categories/cat-1.jpg">
+                                <div class="sf-text">
+                                    <h5>House</h5>
+                                    <span>38 property</span>
+                                </div>
+                            </div>
+                            <div class="sf-item set-bg" data-setbg="img/categories/cat-2.jpg">
+                                <div class="sf-text">
+                                    <h5>Apartment</h5>
+                                    <span>238 property</span>
+                                </div>
+                            </div>
+                            <div class="sf-item set-bg" data-setbg="img/categories/cat-3.jpg">
+                                <div class="sf-text">
+                                    <h5>Villa</h5>
+                                    <span>230 property</span>
+                                </div>
+                            </div>
+                            <div class="sf-item set-bg" data-setbg="img/categories/cat-4.jpg">
+                                <div class="sf-text">
+                                    <h5>Restaurent</h5>
+                                    <span>38 property</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-sidebar">
+                        <div class="section-title sidebar-title">
+                            <h5>mortgage calculator</h5>
+                        </div>
+                        <form action="#" class="calculator-form">
+                            <div class="filter-input">
+                                <p>Sale Price</p>
+                                <input type="text" placeholder="$">
+                            </div>
+                            <div class="filter-input">
+                                <p>Precent Down</p>
+                                <input type="text" placeholder="$">
+                            </div>
+                            <div class="filter-input">
+                                <p>Term(year)</p>
+                                <input type="text" placeholder="Year">
+                            </div>
+                            <div class="filter-input">
+                                <p>Interest Rate in %</p>
+                                <input type="text" placeholder="%">
+                            </div>
+                            <button type="submit" class="site-btn">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
