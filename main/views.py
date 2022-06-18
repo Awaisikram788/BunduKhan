@@ -14,14 +14,15 @@ from django.contrib.auth.models import User
 # Create your views here.
 class Home(View):
     template_name = 'index.html'
-    def get(self,request):
+
+    def get(self, request):
         herosectiondata = Property.objects.all()
         comments = Comment.objects.all()
         context = {
             'data': herosectiondata,
             'comments': comments,
         }
-        return render(request, self.template_name,context)
+        return render(request, self.template_name, context)
 
 
 class AboutView(TemplateView):
@@ -42,31 +43,56 @@ class PropertyListView(TemplateView):
 
 class PropertyDetailView(View):
     template_name = 'property-details.html'
-    def get(self,request,id):
+
+    def get(self, request, id):
         detail = Property.objects.filter(id=id)
         comments = Comment.objects.filter(post__id=id)
         count = len(comments)
         no = [count]
         print(no)
-        context  = {
-            'details':detail,
-            'comments':comments,
-            'count':no,
+        context = {
+            'details': detail,
+            'comments': comments,
+            'count': no,
         }
-        return render(request,self.template_name,context)
-    def post(self,request,id):
+        return render(request, self.template_name, context)
+
+    def post(self, request, id):
         if request.method == 'POST':
-            name = request.POST.get('name','')
-            email = request.POST.get('email','')
-            website = request.POST.get('website','')
-            message = request.POST.get('message','')
+            name = request.POST.get('name', '')
+            email = request.POST.get('email', '')
+            website = request.POST.get('website', '')
+            message = request.POST.get('message', '')
             post = Property.objects.get(id=request.POST.get('property_id'))
-            comment = Comment(name=name,email=email,website=website,body=message,post=post)
+            comment = Comment(name=name, email=email, website=website, body=message, post=post)
             comment.save()
             return redirect('home')
-            messages.success(request,'Comment post Successfully!')
-class PropertySubmitView(TemplateView):
+            messages.success(request, 'Comment post Successfully!')
+
+
+class PropertySubmitView(View):
     template_name = 'property-submit.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        # Fields
+        name = request.POST.get('name', "")
+        msg = request.POST.get('msg', "")
+        address = request.POST.get('address', "")
+        neighbour = request.POST.get('neighbour', "")
+        city = request.POST.get('city', "")
+        state = request.POST.get('state', "")
+        country = request.POST.get('country', "")
+        postal = request.POST.get('postal', "")
+        budjet = request.POST.get('price', "")
+
+        # Checks
+        # if request.POST.get('name', ""):
+
+
+        return redirect('home')
 
 
 class ContactView(View):
@@ -89,6 +115,7 @@ class ContactView(View):
             Contact.objects.create(name=name, email=sender, phone_number=number, message=form.get("message"))
 
         return redirect('contact')
+
 
 # class ConingsoonView(View):
 #     template_name = 'comingsoon.html'

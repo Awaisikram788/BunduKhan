@@ -23,3 +23,24 @@ class Subscriber(models.Model):
     class Meta:
         ordering = [ "-id" ]
 
+
+# class SubmittedProperties(models.Model):
+#     name = models.CharField(max_length=255)
+#     message = models.TextField()
+#     address = models.CharField(max_length=255)
+#     neighbour = models.CharField(max_length=255)
+#     city = models.CharField(max_length=255)
+#     state = models.CharField(max_length=255)
+#     country = models.CharField(max_length=255)
+#     postal = models.CharField(max_length=255)
+#     budget = models.CharField()
+#
+#     email = models.EmailField()
+#     phone_number = models.CharField(max_length=255)
+#     postcode = models.CharField(max_length=255)
+#     message = models.TextField()
+#
+#
+#     def __str__(self):
+#         return f"{self.name} - {self.email}"
+
