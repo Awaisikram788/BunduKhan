@@ -1,0 +1,78 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.mm-bg-img{
+    height: 100vh;
+    background-image: url('./road.jpg');
+   
+    background-position: center;
+    background-size: cover;
+    position: relative;
+   
+}
+.logo-img{
+    height: auto;
+    width: 150px;
+    
+}
+.mm-bgimg {
+    background-color: rgba(0,0,0,0.6);
+    z-index: 10;
+    height: 100%;
+  
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+  }
+  
+  .mm-topleft {
+    position: absolute;
+    top: 20px;
+    
+    left: 46px;
+  }
+  
+  .mm-bottomleft {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    display: flex;
+    column-gap: 10px;
+  }
+  .greeting-icon{
+    text-align: center;
+   padding: 15px 0px;
+   width: 50px;
+    background-color: black;
+    border-radius: 8px;
+   
+  }
+  .greeting-icon a{
+    color: #1ccca7;
+  }
+
+  
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+   
+    margin: 20px 0;
+  }
+  @media (max-width:600px) {
+
+    .mm-topleft{
+        top: 80px;
+        left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    .mm-bottomleft{
+        left: 50%;
+    transform: translate(-50%, -50%);
+    }
+  }
+ 
