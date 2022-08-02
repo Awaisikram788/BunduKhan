@@ -32,6 +32,14 @@
                             <h4>Applicant Name</h4>
                             <input type="text" placeholder="Your Name" name="name">
                         </div>
+                        <div class="pf-title">
+                            <h4>Applicant Email</h4>
+                            <input type="text" placeholder="Email" name="email">
+                        </div>
+                        <div class="pf-title">
+                            <h4>Applicant Phone No.</h4>
+                            <input type="text" placeholder="Phone No." name="phone">
+                        </div>
                        <div class="w-100">
                            <h4>Detail what you want to build?</h4>
                     <textarea name="msg" id="" " rows="10" class="detail-textarea" placeholder="Hello. Share us your Details""></textarea>
@@ -52,7 +60,7 @@
                             <h4>Property type you want to build</h4>
                             <div class="type-item">
                                 <label for="pt-apart">Apartment
-                                    <input name="appartment" value="True" type="radio" id="pt-apart">
+                                    <input name="appartment" value="True" type="checkbox" id="pt-apart">
                                     <span class="checkbox"></span>
                                 </label>
                                 <label for="pt-house">House
@@ -63,18 +71,18 @@
                                     <input name="office" type="checkbox" id="pt-off">
                                     <span class="checkbox"></span>
                                 </label>
-                                <label for="pt-villa">Villa
-                                    <input name="villa" type="checkbox" id="pt-villa">
-                                    <span class="checkbox"></span>
-                                </label>
+{#                                <label for="pt-villa">Villa#}
+{#                                    <input name="villa" type="checkbox" id="pt-villa">#}
+{#                                    <span class="checkbox"></span>#}
+{#                                </label>#}
                                 <label for="pt-store">Store
                                     <input name="store" type="checkbox" id="pt-store">
                                     <span class="checkbox"></span>
                                 </label>
-                                <label for="pt-rest">Resturent
-                                    <input name="resturent" type="checkbox" id="pt-rest">
-                                    <span class="checkbox"></span>
-                                </label>
+{#                                <label for="pt-rest">Restaurent#}
+{#                                    <input name="restaurent" type="checkbox" id="pt-rest">#}
+{#                                    <span class="checkbox"></span>#}
+{#                                </label>#}
                             </div>
                         </div>
                         <div class="pf-status">
@@ -101,77 +109,77 @@
                         <div class="pf-feature">
                             <h4>Feature's You want? (Optional)</h4>
                             <div class="features-list">
+{#                                <div class="feature-item">#}
+{#                                    <label for="air">Air conditioning#}
+{#                                        <input name="AC" type="checkbox" id="air">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="lundry">Laundry#}
+{#                                        <input name="laundry" type="checkbox" id="lundry">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="refrigerator">Refrigerator#}
+{#                                        <input name="fridge" type="checkbox" id="refrigerator">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="washer">Washer#}
+{#                                        <input name="washer" type="checkbox" id="washer">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                </div>#}
+{#                                <div class="feature-item">#}
+{#                                    <label for="barbeque">Barbeque#}
+{#                                        <input name="barbeque" type="checkbox" id="barbeque">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="lawn">Lawn#}
+{#                                        <input name="lawn" type="checkbox" id="lawn">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="sauna">Sauna#}
+{#                                        <input name="sauna" type="checkbox" id="sauna">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="wifi">Wifi#}
+{#                                        <input name="wifi" type="checkbox" id="wifi">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                </div>#}
                                 <div class="feature-item">
-                                    <label for="air">Air conditioning
-                                        <input name="AC" type="checkbox" id="air">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="lundry">Laundry
-                                        <input name="laundry" type="checkbox" id="lundry">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="refrigerator">Refrigerator
-                                        <input name="fridge" type="checkbox" id="refrigerator">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="washer">Washer
-                                        <input name="washer" type="checkbox" id="washer">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                </div>
-                                <div class="feature-item">
-                                    <label for="barbeque">Barbeque
-                                        <input name="barbeque" type="checkbox" id="barbeque">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="lawn">Lawn
-                                        <input name="lawn" type="checkbox" id="lawn">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="sauna">Sauna
-                                        <input name="sauna" type="checkbox" id="sauna">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="wifi">Wifi
-                                        <input name="wifi" type="checkbox" id="wifi">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                </div>
-                                <div class="feature-item">
-                                    <label for="dryer">Dryer
-                                        <input name="dryer" type="checkbox" id="dryer">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="microwave">Microwave
-                                        <input name="microwave" type="checkbox" id="microwave">
-                                        <span class="checkbox"></span>
-                                    </label>
+{#                                    <label for="dryer">Dryer#}
+{#                                        <input name="dryer" type="checkbox" id="dryer">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="microwave">Microwave#}
+{#                                        <input name="microwave" type="checkbox" id="microwave">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
                                     <label for="pool">Swimming Pool
                                         <input name="pool" type="checkbox" id="pool">
                                         <span class="checkbox"></span>
                                     </label>
-                                    <label for="window">Window Coverings
-                                        <input name="window" type="checkbox" id="window">
-                                        <span class="checkbox"></span>
-                                    </label>
+{#                                    <label for="window">Window Coverings#}
+{#                                        <input name="window" type="checkbox" id="window">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
                                 </div>
                                 <div class="feature-item">
                                     <label for="gym">Gym
                                         <input name="gym" type="checkbox" id="gym">
                                         <span class="checkbox"></span>
                                     </label>
-                                    <label for="shower">OutdoorShower
-                                        <input  name="shower" type="checkbox" id="shower">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="tv">Tv Cable
-                                        <input name="tv" type="checkbox" id="tv">
-                                        <span class="checkbox"></span>
-                                    </label>
-                                    <label for="villa">Villa
-                                        <input name="villa" type="checkbox" id="villa">
-                                        <span class="checkbox"></span>
-                                    </label>
+{#                                    <label for="shower">OutdoorShower#}
+{#                                        <input  name="shower" type="checkbox" id="shower">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="tv">Tv Cable#}
+{#                                        <input name="tv" type="checkbox" id="tv">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
+{#                                    <label for="villa">Villa#}
+{#                                        <input name="villa" type="checkbox" id="villa">#}
+{#                                        <span class="checkbox"></span>#}
+{#                                    </label>#}
                                 </div>
                             </div>
                         </div>

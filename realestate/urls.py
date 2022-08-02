@@ -29,7 +29,7 @@ admin.site.index_title = "Bundu Khan Builders & Real Estate"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path(r'^tinymce/', include('tinymce.urls')),
+    path('tinymce/', include('tinymce.urls')),
     # path('tokenget/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('tokenrefresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),

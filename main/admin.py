@@ -4,4 +4,5 @@ from .models import *
 # Register your models here.
 admin.site.register(Contact)
 admin.site.register(Subscriber)
+admin.site.register(SubmittedProperties)
 

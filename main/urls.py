@@ -11,6 +11,7 @@ urlpatterns = [
     path('pdf/', GeneratePdf.as_view()),
     # path('comingsoon/', ConingsoonView.as_view(), name="comingsoon"),
     path('about/', AboutView.as_view(), name="about"),
+    path('thankyou/', ThanksView.as_view(), name="Greeting"),
     # path('builderhome/', BuilderHomeView.as_view(), name="builderhome"),
     # path('signup/', Registration.as_view(), name="registration"),
     # path('login/', Login.as_view(), name="login"),

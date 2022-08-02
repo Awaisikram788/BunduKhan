@@ -4,7 +4,7 @@ body{
 }
 .mm-bg-img{
     height: 100vh;
-    background-image: url('./road.jpg');
+    background-image: url('../img/road.jpg');
    
     background-position: center;
     background-size: cover;
@@ -32,6 +32,24 @@ body{
     
     left: 46px;
   }
+   .mm-topright{
+    position: absolute;
+    top: 50px;
+
+    right: 46px;
+  }
+    .middle p{
+        font-size: 52px !important;
+        font-weight: 700;
+    }
+   .mm-topright a{
+       text-decoration: none;
+       font-size: 24px;
+       padding: 20px;
+       border-radius: 12px;
+       background-color: #00c8a0;
+       color: white;
+   }
   
   .mm-bottomleft {
     position: absolute;
@@ -59,7 +77,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 90%;
+    width: 80%;
    
     margin: 20px 0;
   }
@@ -70,9 +88,24 @@ body{
         left: 50%;
     transform: translate(-50%, -50%);
     }
+       .mm-topright{
+           width: max-content;
+           font-size: 20px;
+           top: 25vh;
+           left: 50%;
+    transform: translate(-50%, -50%);
+
+       }
     .mm-bottomleft{
         left: 50%;
     transform: translate(-50%, -50%);
+    }
+    .middle{
+        width: 90% !important;
+    }
+    .middle p{
+        font-size: 32px !important;
+        font-weight: 700;
     }
   }
  

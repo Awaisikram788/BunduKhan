@@ -79,20 +79,58 @@ class PropertySubmitView(View):
     def post(self, request):
         # Fields
         name = request.POST.get('name', "")
+        email = request.POST.get('email', "")
+        phone = request.POST.get('phone', "")
         msg = request.POST.get('msg', "")
         address = request.POST.get('address', "")
         neighbour = request.POST.get('neighbour', "")
         city = request.POST.get('city', "")
         state = request.POST.get('state', "")
         country = request.POST.get('country', "")
-        postal = request.POST.get('postal', "")
-        budjet = request.POST.get('price', "")
+        postal_code = request.POST.get('postal', "")
+        budget = request.POST.get('price', "")
 
-        # Checks
-        # if request.POST.get('name', ""):
+        # if request.POST.get('image', ""):
+        #     # image = request.POST.get('image')
+        #     file = request.FILES['image']
+        #     image = file.read()
 
+        # Property Type
 
-        return redirect('home')
+        if request.POST.get('appartment', ""):
+            property_type = request.POST.get('appartment')
+
+        if request.POST.get('house', ""):
+            property_type = request.POST.get('house')
+
+        if request.POST.get('office', ""):
+            property_type = request.POST.get('office')
+
+        if request.POST.get('store', ""):
+            property_type = request.POST.get('store')
+
+        # Land Status
+
+        if request.POST.get('from_client', ""):
+            land_status = request.POST.get('from_client')
+
+        if request.POST.get('from_bundukhan', ""):
+            land_status = request.POST.get('from_bundukhan')
+
+        # Features
+        if request.POST.get('pool', ""):
+            pool = False
+        else:
+            pool = True
+
+        if request.POST.get('gym', ""):
+            gym = True
+        else:
+            gym = False
+
+        submit = SubmittedProperties.objects.create(name=name, email=email, phone_number=phone, message=msg, address=address, neighbour=neighbour, city=city, state=state, country=country, postal_code=postal_code, budget=budget, property_type=property_type, land_status=land_status, pool=pool, gym=gym)
+
+        return redirect('Greeting')
 
 
 class ContactView(View):
@@ -108,9 +146,9 @@ class ContactView(View):
             postcode = form.get("postcode")
             subject = "Message from contact us form"
             message = 'FROM : ' + form.get("name") + ' \nMessage : ' + form.get("message")
-            # email_from = settings.EMAIL_HOST_USER
-            # recipient_list = ['taimoor98.th@gmail.com',sender,]
-            # send_mail( subject, message, email_from, recipient_list )
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['awaisikram788@gmail.com',sender,]
+            send_mail( subject, message, email_from, recipient_list )
             messages.success(request, "Message sent sucessfully")
             Contact.objects.create(name=name, email=sender, phone_number=number, message=form.get("message"))
 
@@ -209,3 +247,7 @@ class GeneratePdf(View):
 
         # rendering the template
         return HttpResponse(pdf, content_type='application/pdf')
+class ThanksView(View):
+    template_name = 'Greeting.html'
+    def get(self, request):
+        return render(request, self.template_name)
